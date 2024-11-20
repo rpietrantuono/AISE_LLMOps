@@ -1,15 +1,15 @@
-# [name] An Extract, Transform, Machine Learning Application
+# LLMOps example. An Extract, Transform, Machine Learning Application
 
-[name] aims to assist a tech-savvy taxi company, operating a fleet of thousands of vehicles, in achieving greater consistency in ride times and a deeper comprehension of longer journeys. By addressing these, [name] intends to improve the customer experience, thereby, increase retention and return business.
+The TaxyAssistant applucation aims to assist a tech-savvy taxi company, operating a fleet of thousands of vehicles, in achieving greater consistency in ride times and a deeper comprehension of longer journeys. By addressing these, TaxyAssistant intends to improve the customer experience, thereby, increase retention and return business.
 
-[name] offers the following key features:
+TaxyAssistant offers the following key features:
 
 - **Anomaly Detection**: Identifies rides with atypical ride time or ride length behaviors through clustering analysis. By clustering rides based on distance and time features, outliers are detected and flagged within the company's internal analysis tool;
 - **Daily Reporting**: Generates comprehensive daily reports, for anomalous rides, by integrating traffic news, call transcripts, and core ride information. These reports are stored in the designated data location for future reference and analysis;
 
 ## Requirements
 
-[name] satisfies the following requirements:
+TaxyAssistant satisfies the following requirements:
 
 - Rides should be clustered based on ride distance and time, and anomalies/outliers identified;
 - Speed (distance/time) was not to be used, as analysts would like to understand long-distance rides or those with long duration;
