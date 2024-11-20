@@ -357,3 +357,15 @@ An example of a generated report:
         "prompt": "\n<|system|>\nYou are an helpful assistant.<|end|>\n<|user|>\nThe following information describes conditions relevant to\ntaxi journeys through a single day in Glasgow, Scotland.\nNews: It is expected to be a busy shopping day today as many retailers attempt are offering discounts to try to lure shoppers back into city centre stores after the COVID-19 pandemic and lockdown. Many are expected to make there way into Glasgow city centre today to take advantage of the discounts on offer. There is also an expected surge in activity on online shopping sites.\nWeather: The weather is expected to be sunny and dry over the next few days, with temperatures in the mid-teens looking set to entice people out and about.\nTraffic: Traffic is expected to be heavy on the M8 motorway near Glasgow today due to an influx of shoppers into the city centre.\nSummarize the above information in 3 sentences or less.< |end | >\n<|assistant|>\n"
     }
 ```
+Testing at development stage should also include "evaluation" of the LLM. Evaluation is usually carried out either against benchmarks (see the slides on "Evaluation") or against a human reference, or by emans of another LLM acting as evaluator. There is ongoing research around this topic, some techniques will be shown later in the course.
+
+## Monitioring
+
+Once the application is deployed (e.g., see the previous tutorials using Docker and/or Kubernetes), you should monitor its performance, in line with the LLMOps steps. While we have already seen solutions for monitoring ML applications, there are specific solutions for monitoring LLMs, although this is a relatively new filed and new solutions come out quite often. Metrics of interest include user engagement and interaction metrics (e.g., time between prompts and responses, number of conversations per user, users feedback), quality of the response (e.g., similarity metrics with respect to a reference), perforamcne (e.g., response per second, latency), cost (GPU/CPU usage, LLM usage cost). 
+Monitoring tools ofer one or more services, including:
+- **Guardrails**, which can block inputs to the LLM (e.g., malicuous inputs or inputs to break privacy or to engage in harmful chats), or the LLM output (e.g., block sensitive information or toxic content in the resposne)
+- **Tracing**, Tracing allows to record the sequence of events caused by an interac- tion with an LLM application, capturing paths taken by requests, exchanged data, timestamp of invocations and other sta- tistical information
+- **Analytics** that provides report about gathered metrics
+- **Evaluation**, that are able to run qualitative analysis on prompts/responses, e.g., for detecting halluciations and generally incorrect answers that could trigger retraining.
+
+Example of tools you could try to use (e.g., in your project) are: Lunary (https://lunary.ai/), Phoenix (https://phoenix.arize.com/), Lakera Guard (https://www.lakera.ai/lakera-guard), LangKit (https://whylabs.ai/safeguard-large-language-models). Check the licenses before usage. 
